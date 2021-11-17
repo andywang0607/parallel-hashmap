@@ -119,12 +119,12 @@ namespace phmap {
         class parallel_node_hash_set;
 
     template <class Key, class Value,
+              class Mutex = phmap::NullMutex, // use std::mutex to enable internal locks
               class Hash  = phmap::priv::hash_default_hash<Key>,
               class Eq    = phmap::priv::hash_default_eq<Key>,
               class Alloc = phmap::priv::Allocator<
                             phmap::priv::Pair<const Key, Value>>, // alias for std::allocator
-              size_t N    = 4,                  // 2**N submaps
-              class Mutex = phmap::NullMutex>   // use std::mutex to enable internal locks
+              size_t N    = 4>                  // 2**N submaps
         class parallel_node_hash_map;
 
     // ------------- forward declarations for btree containers ----------------------------------

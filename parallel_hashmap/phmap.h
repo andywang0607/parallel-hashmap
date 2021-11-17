@@ -4743,7 +4743,7 @@ public:
 // -----------------------------------------------------------------------------
 // phmap::parallel_node_hash_map
 // -----------------------------------------------------------------------------
-template <class Key, class Value, class Hash, class Eq, class Alloc, size_t N, class Mtx_>
+template <class Key, class Value, class Mtx_, class Hash, class Eq, class Alloc, size_t N>
 class parallel_node_hash_map
     : public phmap::priv::parallel_hash_map<
           N, phmap::priv::raw_hash_set, Mtx_,
